@@ -1,0 +1,18 @@
+        <div class="bottom">
+            <p class="toGetCenter">
+            <div class="choiceBox">
+                <a  href="#" onclick="alreadyFirstOne()">上一章</a>
+                <a  href="index.html">总目录</a>
+                <a  href="book1.html">卷目录</a>
+                <a  href="b1c2.html">下一章</a>
+
+            </div>
+            </p>
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>

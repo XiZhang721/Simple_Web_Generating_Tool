@@ -1,0 +1,132 @@
+.box {
+    position: relative;
+    margin-left: 10%;
+    margin-top: 0vw;
+    display: block;
+    height: auto;
+    width: 80%;
+    border: 5px solid red;
+    background-color: rgb(255, 230, 234);
+}
+
+.botton1 {
+    margin-top: 0.1vw;
+    margin-right: 0.1vw;
+    display: block;
+    height: 1vw;
+    width: 1vw;
+    position: absolute;
+    right: 1vw;
+    top: 1vw;
+    border: 1px solid black;
+    background-color: rgb(210, 255, 210);
+}
+
+.botton1:hover {
+    cursor: pointer;
+}
+
+.botton2 {
+    margin-top: 0;
+    margin-right: 0;
+    display: block;
+    height: 1vw;
+    width: 1vw;
+    position: absolute;
+    right: 3vw;
+    top: 1vw;
+    border: 3px solid black;
+    background-color: rgb(255, 230, 234);
+}
+
+.botton2:hover {
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 2.25vw;
+    margin-top: 2vw;
+    margin-left: 5%;
+}
+
+h2 {
+    font-size: 1.75vw;
+    margin-top:1vw;
+    margin-left: 5%;
+    
+}
+
+.text {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+    font-size: 1.25vw;
+    font-weight: 600;
+    text-indent: 2em;
+}
+
+.text p a {
+    text-decoration: none;
+    color:  rgb(131, 0, 2);
+}
+
+.text p {
+    float: top;
+    margin-top: -5px;
+    margin-bottom: -15px;
+}
+
+.notes {
+    width: 90%;
+    margin-left: 5%;
+    font-size: 15px;
+    font-weight: 800;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.notes a {
+    color: #000;
+    text-decoration: none;
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 20px;
+    align-items: center;
+    
+}
+
+
+.choiceBox {
+    display: flex;
+    align-self: center;
+    margin-top: 1vw;
+    margin-bottom: 2.5vw;
+    height: 2vw;
+    width: 32.8vw;
+}
+
+.choiceBox a {
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.35vw;
+    margin-right: -0.2vw;
+    margin-top: 0;
+    color: #000;
+    display: block;
+    height: 1.75vw;
+    width: 8vw;
+    border: 0.2vw dashed #000;
+    background-color: rgba(255, 136, 0, 0.4)
+}
+
+.choiceBox a:hover {
+    color: white;
+    background-color: rgba(252, 38, 0, 0.555)
+}
