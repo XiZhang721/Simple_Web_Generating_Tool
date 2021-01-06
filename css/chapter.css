@@ -71,24 +71,38 @@ h2 {
     color:  rgb(131, 0, 2);
 }
 
+.text p a:hover{
+    color:rgb(211, 91, 93)
+}
+
 .text p {
     float: top;
     margin-top: -5px;
     margin-bottom: -15px;
 }
 
-.notes {
+.comments {
     width: 90%;
     margin-left: 5%;
-    font-size: 15px;
+    font-size: 1vw;
     font-weight: 800;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
 }
 
-.notes a {
+.comments h2 {
+    margin-left:0%;
+    margin-top:0%;
+}
+
+.comments a {
     color: #000;
     text-decoration: none;
+}
+
+.comments a:hover{
+    color:rgb(131, 0, 2);
+
 }
 
 .bottom {

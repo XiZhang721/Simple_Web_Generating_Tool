@@ -34,19 +34,19 @@ def texts(filename,writing_data,tab_num):
     writing_data.write(head+"<div class=text>"+"\n")
     head=tab_build(tab_num+1)
     for line in data.readlines():
-        line=line.replace("\n","")
+        line=line.replace("\n","").replace("　　","")
         line_text=head+"<p>"+line+"</p><br>\n"
         need_to_be_replaced=[]
         replacing_texts=[]
         #for comment tag that is in allsymbol
-        for char in line_text:
-            if char in allsymbol:
-                #print(char)
+        for i in range(0,len(line_text)):
+            if line_text[i] in allsymbol:
                 herfname="#note"+str(count)
                 name="back"+str(count)
                 count+=1
-                new_str="<a href="+herfname+" name="+name+">"+char+"</a>"
-                line_text=line_text.replace(char,new_str)
+                new_str="<a href="+herfname+" name="+name+">"+line_text[i]+"</a>"
+                need_to_be_replaced.append(line_text[i])
+                replacing_texts.append(new_str)
         #for comment tag that is over 20 but less than 100
         for i in range(0,len(line_text)):
             if (line_text[i]=="（" )& ((i+3)<len(line_text)):
@@ -65,16 +65,43 @@ def texts(filename,writing_data,tab_num):
     data.close()
 
 
+def comments(filename,writing_data,tab_num):
+    data=open(file=filename,mode="r",encoding="UTF-8")
+    count,new_str,herfname,name=1,"","",""
+    title=data.readline()
+    title=title.replace("　　","").replace("\n","")
+    head=tab_build(tab_num)
+    title=head+"<div class=comments>\n"+head+"<h2>"+title+"</h2>\n"
+    writing_data.write(title)
+    head=tab_build(tab_num+1)
+    for line in data.readlines():
+        line=line.replace("　　","").replace(" ","")
+        herfname="<a href=#back"+str(count)+" name=note"+str(count)+">"
+        new_str=head+herfname+line+head+"</a> <br>\n"
+        writing_data.write(new_str)
+        count+=1
+    head=tab_build(tab_num)
+    writing_data.write(head+"</div>"+"\n")
+    data.close()
+
+
+
+
 # combine the head and the text and the tail into a web. need to give the tab number needed to fit the format 
-def main(head_part,result_file_name,tail_part,texts1,tab_num):
+def main(head_part,result_file_name,tail_part,text,comment,tab_num):
     head_data=open(file=head_part,mode="r",encoding="UTF-8")
     tail_data=open(file=tail_part,mode="r",encoding="UTF-8")
     writing_data=open(file=(result_file_name+".html"),mode="w",encoding="UTF-8")
+    tab_num=int(tab_num)
     for line in head_data.readlines():
         writing_data.write(line)
     head_data.close()
-    texts(texts1,writing_data,tab_num)
+    texts(text,writing_data,tab_num)
+    comments(comment,writing_data,tab_num)
     for line in tail_data.readlines():
         writing_data.write(line)
     tail_data.close()
     writing_data.close()
+
+main("example_head.txt","example_result","example_tail.txt","example_text.txt","example_comments.txt",2)
+main("example_head.txt","complex_example_result","example_tail.txt","complex_example_text.txt","complex_example_comments.txt",2)
