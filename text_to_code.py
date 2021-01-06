@@ -64,7 +64,7 @@ def texts(filename,writing_data,tab_num):
     writing_data.write(head+"</div>"+"\n")
     data.close()
 
-
+#build the comments part for readers and can click to go back to the tag in the text
 def comments(filename,writing_data,tab_num):
     data=open(file=filename,mode="r",encoding="UTF-8")
     count,new_str,herfname,name=1,"","",""
@@ -103,5 +103,3 @@ def main(head_part,result_file_name,tail_part,text,comment,tab_num):
     tail_data.close()
     writing_data.close()
 
-main("example_head.txt","example_result","example_tail.txt","example_text.txt","example_comments.txt",2)
-main("example_head.txt","complex_example_result","example_tail.txt","complex_example_text.txt","complex_example_comments.txt",2)
